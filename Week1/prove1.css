@@ -1,0 +1,46 @@
+body{
+    background-color: lightgray;
+}
+
+#content{
+    background-color: lightgray;
+    border: 2px solid grey;
+    padding: 5%;
+    margin: 2%;
+    text-align: center;
+}
+
+#content p{
+    color: #4372c9;
+    font-size: 1.5rem;
+}
+
+#content hr{
+    width: 45%;
+    max-width: 35rem;
+    height: 4px;
+    background-color: #4372c9;
+}
+
+#topics .list{
+    margin: 0 auto;
+    max-width: 28rem;
+    text-align: left;
+    list-style-type: none;
+}
+
+hr{
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+img{
+    width: 35%;
+    max-width: 25rem;
+    min-width: 15rem;
+}
+
