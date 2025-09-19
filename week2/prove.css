@@ -1,0 +1,62 @@
+.page-contents {
+  margin: 0 auto;
+  padding: 20px 0;
+  max-width: 70%;
+}
+
+.main-text {
+  width: 450px;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.mission-statement {
+  text-align: center;
+}
+
+#theme-selector{
+  position: absolute;
+  top: 50px;
+  z-index: 1;
+}
+
+.mission-statement h1 {
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 0.1rem;
+}
+
+.mission-statement p {
+  margin-bottom: 0.1rem;
+  color: #1f73b7;
+
+  letter-spacing: 0.1rem;
+}
+
+.mission-statement hr {
+  margin-top: 0rem;
+  margin-bottom: 3rem;
+  border: 1px solid #efebeb;
+  width: 30rem;
+}
+
+.lists li {
+  margin-bottom: 1rem;
+}
+
+#byui-logo {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+#byui-logo img {
+  width: 8rem;
+}
+
+
+.dark-text{
+  color: white;
+}
+
+.dark-background{
+  background-color: rgb(41, 41, 44);
+}
