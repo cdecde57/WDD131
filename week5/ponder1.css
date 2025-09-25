@@ -64,6 +64,10 @@ header, footer {
         grid-column: 1;
     }
 
+    .main-nav li{
+        display: inline-block;
+    }
+
     
 
 }
