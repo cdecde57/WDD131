@@ -6,6 +6,7 @@ body{
   margin: 0 auto;
   padding: 0;
   max-width: 70%;
+  border: 1px solid grey;
 }
 
 .main-text {
