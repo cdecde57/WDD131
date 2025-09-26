@@ -52,3 +52,46 @@ console.log("7")
 console.log(`${7 / 3}`)
 console.log(students);
 console.log("2")
+
+
+// Some examples using the map, filter, and reduce functions
+
+
+let someArray = [1,2,3,4,5,6,7,8,9,10]
+
+// Example with map
+console.log(someArray.map(divider));
+
+// Using map, divide each value in an array in half
+function divider(item){
+    return item / 2;
+}
+
+// example with filter
+console.log(someArray.filter(oddBall));
+
+// Use filter to return only odd numbers
+function oddBall(item){
+    if(item % 2 != 0){
+        return item;
+    }
+    else{
+        return;
+    }
+}
+
+
+// example using reduce
+console.log(someArray.reduce(compound, 0));
+
+// Use filter to add all even numbers together
+function compound(total, item){
+    
+    if(item % 2 === 0){
+        return total + item;
+    }
+    else{
+        return total;
+    }
+}
+
