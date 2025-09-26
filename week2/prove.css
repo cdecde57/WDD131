@@ -1,23 +1,22 @@
+body{
+  font-size: 20px;
+}
+
 .page-contents {
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 0;
   max-width: 70%;
 }
 
 .main-text {
-  width: 450px;
+  width: 600px;
   text-align: left;
   margin: 0 auto;
 }
 
 .mission-statement {
   text-align: center;
-}
-
-#theme-selector{
-  position: absolute;
-  top: 50px;
-  z-index: 1;
+  line-height: 1.5;
 }
 
 .mission-statement h1 {
@@ -27,7 +26,7 @@
 
 .mission-statement p {
   margin-bottom: 0.1rem;
-  color: #1f73b7;
+  color: #006EB6;
 
   letter-spacing: 0.1rem;
 }
@@ -49,7 +48,7 @@
 }
 
 #byui-logo img {
-  width: 8rem;
+  width: 150px;
 }
 
 
@@ -59,4 +58,10 @@
 
 .dark-background{
   background-color: rgb(41, 41, 44);
+}
+
+#theme-selector{
+  position: absolute;
+  top: 50px;
+  z-index: 1;
 }
