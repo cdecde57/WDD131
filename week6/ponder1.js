@@ -54,10 +54,17 @@ console.log(students);
 console.log("2")
 
 
-// Some examples using the map, filter, and reduce functions
 
 
+
+
+// Some examples using the map, filter, reduce, and indexOf functions
 let someArray = [1,2,3,4,5,6,7,8,9,10]
+
+// Getting the index of specific values in the array
+console.log(someArray.indexOf(3)); // Should be 2
+console.log(someArray.indexOf(7)); // Should be 6
+console.log(someArray.indexOf(1)); // Should be 0
 
 // Example with map
 console.log(someArray.map(divider));
@@ -81,7 +88,7 @@ function oddBall(item){
 }
 
 
-// example using reduce
+// example using reduce. I also modified the 'total' parameter to start at 0 instead of the value of the first item in the array
 console.log(someArray.reduce(compound, 0));
 
 // Use filter to add all even numbers together
