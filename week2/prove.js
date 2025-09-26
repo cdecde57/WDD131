@@ -16,6 +16,8 @@ function updateTheme(event){
     var pageContent = document.querySelector(".page-contents");
     var pageBody = document.querySelector("body");
     var byuLogo = document.querySelector("#byui-logo img")
+    var missionStatement = document.querySelector(".mission-statement h2");
+    var subtitle = document.querySelector(".mission-statement p");
 
     if (selectedTheme === "dark"){
 
@@ -23,6 +25,9 @@ function updateTheme(event){
         pageContent.classList.add("dark-text");
         pageBody.classList.add("dark-background");
         byuLogo.setAttribute("src","prove-dark.png");
+        missionStatement.classList.add("dark-header");
+        subtitle.classList.remove("subtitle");
+        subtitle.classList.add("subtitle-dark");
     }
 
     else if (selectedTheme === "light"){
@@ -30,6 +35,8 @@ function updateTheme(event){
         pageContent.classList.remove("dark-text");
         pageBody.classList.remove("dark-background");
         byuLogo.setAttribute("src","prove.png");
+        subtitle.classList.remove("subtitle-dark");
+        subtitle.classList.add("subtitle");
     }
     else{
         console.log("I guess if I wanted another theme, or a default one I could add one. For now I will just send this message - Hello, World!");

@@ -19,14 +19,21 @@ body{
   line-height: 1.5;
 }
 
-.mission-statement h1 {
+.mission-statement h2 {
   font-family: "Times New Roman", Times, serif;
   letter-spacing: 0.1rem;
 }
 
-.mission-statement p {
+.subtitle {
   margin-bottom: 0.1rem;
   color: #006EB6;
+
+  letter-spacing: 0.1rem;
+}
+
+.subtitle-dark {
+  margin-bottom: 0.1rem;
+  color: #43b0f9;
 
   letter-spacing: 0.1rem;
 }
@@ -58,6 +65,10 @@ body{
 
 .dark-background{
   background-color: #333;
+}
+
+.dark-header{
+  color: #43b0f9;
 }
 
 #theme-selector{
