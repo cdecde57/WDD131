@@ -24,7 +24,7 @@ body{
 }
 
 .mission-statement h1 {
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.2rem;
 }
 
 .subtitle {
@@ -32,14 +32,7 @@ body{
   font-size: 1rem;
   color: #006EB6;
 
-  letter-spacing: 0.1rem;
-}
-
-.subtitle-dark {
-  margin-bottom: 0.1rem;
-  color: #43b0f9;
-
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.2rem;
 }
 
 .mission-statement hr {
