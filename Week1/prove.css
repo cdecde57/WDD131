@@ -1,10 +1,13 @@
 body{
   font-size: 20px;
+  line-height: 1.5;
+  font-family: "Times New Roman", Times, serif;
 }
 
 .page-contents {
   margin: 0 auto;
-  padding: 0;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
   max-width: 70%;
   border: 1px solid grey;
 }
@@ -17,16 +20,15 @@ body{
 
 .mission-statement {
   text-align: center;
-  line-height: 1.5;
 }
 
-.mission-statement h2 {
-  font-family: "Times New Roman", Times, serif;
+.mission-statement h1 {
   letter-spacing: 0.1rem;
 }
 
-.mission-statement p {
+.mission-statement h2 {
   margin-bottom: 0.1rem;
+  font-size: 1rem;
   color: #006EB6;
 
   letter-spacing: 0.1rem;
@@ -36,7 +38,7 @@ body{
   margin-top: 0rem;
   margin-bottom: 3rem;
   border: 1px solid #efebeb;
-  width: 30rem;
+  width: 40rem;
 }
 
 .lists li {
