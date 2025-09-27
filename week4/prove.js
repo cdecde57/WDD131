@@ -12,11 +12,9 @@ const modalImage = modalBox.querySelector("img");
 const imageGallery = document.querySelector(".image-content");
 
 imageGallery.addEventListener("click", (e) => {
-  // Find the image that was selected
-  var targetImage = e.target.getAttribute("src");
 
   // Display the image selected within the modal
-  modalImage.setAttribute("src", targetImage);
+  modalImage.setAttribute("src", "norris-full.jpeg");
 
   modalBox.showModal();
 });
