@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Credit Card Form" />
+    <meta name="author" content="Thomas Gardner" />
+    <link rel="shortcut icon" href="prove.png" type="image/x-icon" />
+    <title>Credit Card Form</title>
+    <script src="prove.js" defer></script>
+    <link rel="stylesheet" href="prove.css" />
+  </head>
+  <body>
+    <article class="error hide">
+    </article>
+    <form action="#" class="card-form" method="get">
+      <div class="background-card">
+        <div id="background-card-line"></div>
+
+        <div class="cvv">
+          <label for="cvv-input">CVC/CVV</label>
+          <input
+            type="text"
+            name="cvv-input"
+            pattern="[0-9]{3}"
+            placeholder="xxx"
+            required
+            maxlength="3"
+            size="3"
+            id="cvv-input"
+          />
+        </div>
+      </div>
+
+      <div class="foreground-card">
+        <p>TOTAL: $199</p>
+        <p class="credit-card">💳</p>
+
+        <div class="card-number">
+          <label for="card-number-input">CARD NUMBER</label>
+          <input
+            type="text"
+            name="card-number-input"
+            pattern="[0-9]{16}"
+            placeholder="1234 5678 9101 1020"
+            required
+            size="32"
+            maxlength="16"
+            id="card-number-input"
+          />
+        </div>
+
+        <div class="card-holder">
+          <label for="card-holder-input">CARD HOLDER</label>
+          <input
+            type="text"
+            name="card-holder-input"
+            placeholder="John Doe"
+            required
+            size="32"
+            maxlength="32"
+            id="card-holder-input"
+          />
+        </div>
+
+        <div class="expiration-date">
+          <label for="expiration-date">EXPIRATION</label>
+          <p>
+            <input
+              type="text"
+              name="month"
+              pattern="[0-9]{2}"
+              placeholder="MM"
+              required
+              id="month"
+              aria-labelledby="expiration-date"
+              size="2"
+              maxlength="2"
+            />
+            <input
+              type="text"
+              name="year"
+              pattern="[0-9]{2}"
+              placeholder="YY"
+              required
+              id="year"
+              aria-labelledby="expiration-date"
+              size="2"
+              maxlength="2"
+            />
+          </p>
+        </div>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
