@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Recipes" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="A Page full of recipes" />
+    <meta property="og:image" content="URL to an image" />
+    <meta property="og:url" content="URL of the page" />
+    <meta name="twitter:card" content="Large Twitter image" />
+    <meta name="description" content="Recipe Website" />
+    <meta name="author" content="Thomas Gardner" />
+    <link rel="stylesheet" href="prove.css" />
+    <script type="module" src="prove.mjs" defer></script>
+    <script src="prove.js" defer></script>
+    <title>Recipes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tagesschrift&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <section class="logo-section">
+        <img src="images/recipe-book.png" alt="Recipe Book Logo" />
+        <h1>Recipe Book</h1>
+      </section>
+
+      <section class="search-feature">
+        <input type="text" placeholder="Find a recipe" />
+        <button><img src="images/search.svg" alt="Magnifying Glass" /></button>
+      </section>
+    </header>
+
+    <main>
+      <hr />
+
+      <div class="recipe">
+        <img
+          class="recipe-img"
+          src="images/apple-crisp.jpg"
+          alt="Recipe end result"
+        />
+
+        <article class="recipe-content">
+          <section class="tag-list">
+            <p class="tag">dessert</p>
+          </section>
+
+          <p class="recipe-name">Apple Crisp</p>
+
+          <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
+            <span aria-hidden="true" class="icon-star">⭐</span>
+            <span aria-hidden="true" class="icon-star">⭐</span>
+            <span aria-hidden="true" class="icon-star">⭐</span>
+            <span aria-hidden="true" class="icon-star-empty">⭐</span>
+            <span aria-hidden="true" class="icon-star-empty">☆</span>
+          </span>
+
+          <p class="recipe-description">
+            This apple crisp recipe is a simple yet delicious fall dessert
+            that's great served warm with vanilla ice cream.
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <footer>
+      <a
+        href="https://www.flaticon.com/free-icons/recipe"
+        title="recipe icons"
+        id="credit"
+        >Recipe icons created by Freepik - Flaticon</a
+      >
+      <section class="social">
+
+        <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
+        <a href="#"
+          ><img class="social-img" src="images/instagram_icon.svg" alt="instagram icon"
+        /></a>
+        <a href="#"><img class="social-img" src="images/youtube_icon.svg" alt="youtube icon" /></a>
+        <a href="#"
+          ><img class="social-img" src="images/pinterest_icon.svg" alt="pinterest icon"
+        /></a>
+      </section>
+    </footer>
+  </body>
+</html>
