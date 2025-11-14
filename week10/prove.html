@@ -8,18 +8,18 @@
     <meta property="og:description" content="Recipe Website" />
     <meta
       property="og:image"
-      content="https://cdecde57.github.io/WDD131/week9/images/recipe-book.png"
+      content="https://cdecde57.github.io/WDD131/week10/images/recipe-book.png"
     />
     <meta
       property="og:url"
-      content="https://cdecde57.github.io/WDD131/week9/prove.html"
+      content="https://cdecde57.github.io/WDD131/week10/prove.html"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="description" content="Recipe Website" />
     <meta name="author" content="Thomas Gardner" />
     <link rel="stylesheet" href="prove.css" />
     <script type="module" src="prove.mjs" defer></script>
-    <script src="prove.js" defer></script>
+    <script type="module" src="prove.js" defer></script>
     <title>Recipes</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,42 +37,18 @@
       </section>
 
       <section class="search-feature">
-        <input type="text" placeholder="Find a recipe" />
-        <button><img src="images/search.svg" alt="Magnifying Glass" /></button>
+        <input type="text" placeholder="Find a recipe" id="search-value" />
+        <button id="search-recipe"><img src="images/search.svg" alt="Magnifying Glass" /></button>
       </section>
     </header>
 
     <main>
       <hr />
 
-      <article class="recipe">
-        <img
-          class="recipe-img"
-          src="images/apple-crisp.jpg"
-          alt="Recipe end result"
-        />
+      <div class="all-recipes">
 
-        <article class="recipe-content">
-          <section class="tag-list">
-            <p class="tag">dessert</p>
-          </section>
+      </div>
 
-          <p class="recipe-name">Apple Crisp</p>
-
-          <span class="rating" role="img" aria-label="Rating: 4 out of 5 stars">
-            <span aria-hidden="true" class="icon-star">⭐</span>
-            <span aria-hidden="true" class="icon-star">⭐</span>
-            <span aria-hidden="true" class="icon-star">⭐</span>
-            <span aria-hidden="true" class="icon-star-empty">⭐</span>
-            <span aria-hidden="true" class="icon-star-empty">☆</span>
-          </span>
-
-          <p class="recipe-description">
-            This apple crisp recipe is a simple yet delicious fall dessert
-            that's great served warm with vanilla ice cream.
-          </p>
-        </article>
-      </article>
     </main>
 
     <footer>
