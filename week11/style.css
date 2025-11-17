@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-size: large;
+  padding: 2rem;
+}
+
+.light-color-block {
+  width: 400px;
+  height: 250px;
+  background-color: #2a4682;
+  color: white;
+  padding: 2rem;
+  margin: 1rem 0;
+}
+
+.mid-light-color-block {
+  background-color: white;
+  color: #2a4682;
+}
+
+.dark-color-block {
+  width: 400px;
+  height: 250px;
+  background-color: #222;
+  color: white;
+  padding: 2rem;
+  margin: 1rem 0;
+}
+
+.mid-dark-color-block {
+  background-color: #9184d2;
+  color: #222;
+}
+
+p {
+  font-family: sans-serif;
+}
+
+h2 {
+  font-family: lato;
+}
