@@ -102,12 +102,12 @@ function performSearch(e){
     let discoveredRecipes = recipes.filter(filterRecipes)
     
     // Sort all the recipes we found from the search
-    // I use the sort function here to sort the recipes by the first character in the name. Check notes on details on how the sort function works for details why we did this
+    // I use the sort function here to sort the recipes based on the lowercase name. Check notes on details on how the sort function works for details why we did this
     discoveredRecipes.sort((a, b)=>{
-        if(a.name.toLowerCase()[0] > b.name.toLowerCase()[0]){
+        if(a.name.toLowerCase() > b.name.toLowerCase()){
             return 1;
         }
-        else if(a.name.toLowerCase()[0] < b.name.toLowerCase()[0]){
+        else if(a.name.toLowerCase() < b.name.toLowerCase()){
             return -1;
         }
         else {
