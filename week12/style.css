@@ -1,3 +1,11 @@
+/*My CSS variables*/
+:root {
+  --light-primary-color: #eee;
+  --light-secondary-color: #2a4682;
+  --light-anchor-primary: #4c68a4;
+  --light-anchor-secondary: black;
+}
+
 /*Elements*/
 * {
   box-sizing: border-box;
@@ -9,25 +17,37 @@ img {
 
 body {
   font-size: large;
-  background-color: #eee;
-  color: #2a4682;
+  background-color: var(--light-primary-color);
+  color: var(--light-secondary-color);
 }
 
 a {
-  color: #4c68a4;
+  color: var(--light-anchor-primary);
   font-weight: bold;
   text-decoration: none;
 }
 a:hover {
-  color: black;
+  color: var(--light-anchor-secondary);
   font-weight: bold;
 }
 
 p,
 pre,
-li, label {
+li,
+label,
+input,
+option,
+select,
+button {
   font-family: sans-serif;
   line-height: 1.5rem;
+}
+
+input,
+select,
+button {
+  border-radius: 5px;
+  background-color: var(--light-primary-color);
 }
 
 h1,
@@ -46,8 +66,8 @@ h6 {
 
 .header-menu-button {
   text-align: center;
-  background-color: #2a4682;
-  color: #eee;
+  background-color: var(--light-secondary-color);
+  color: var(--light-primary-color);
   padding: 0.5rem;
 }
 
@@ -59,57 +79,95 @@ h6 {
   color: black;
 }
 
-
 .navigation-bar {
   display: flex;
   flex-flow: column wrap;
   align-items: center;
   gap: 2rem;
-  background-color: #4c68a4;
+  background-color: var(--light-anchor-primary);
 }
 
 .navigation-bar a {
-  color: #eee;
+  color: var(--light-primary-color);
 }
 
 .navigation-bar a:hover {
-  color: black;
+  color: var(--light-anchor-secondary);
 }
 
 .budget-widget-instructions {
-  background-color: #2a4682;
-  color: #eee;
+  background-color: var(--light-secondary-color);
+  color: var(--light-primary-color);
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
-.widget-budgeter{
-    background-color: #2a4682;
-    color: #eee;
-
+#widget-title {
+  margin-left: 0.5rem;
 }
 
-.wdiget-item{
+.widget-budgeter {
+  background-color: var(--light-secondary-color);
+  color: var(--light-primary-color);
+  padding: 1rem 0;
+}
 
+.widget-item input,
+.widget-item select {
+  width: 30%;
+  max-width: 300px;
+}
+
+.widget-item {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 0.25rem;
+  font-size: medium;
+}
+
+.widget-entry {
+  text-align: center;
+}
+
+.widget-entry p {
+  border-right: 2px solid var(--light-anchor-secondary);
+  padding: 0 0.5rem;
+  display: inline-block;
+  font-size: medium;
+}
+
+.widget-entry p:first-of-type {
+  border-left: 2px solid var(--light-anchor-secondary);
+}
+
+#widget-feedback {
+  margin-left: 0.5rem;
+}
+.add-remove-buttons {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: end;
+  gap: 0.25rem;
+  margin-right: 0.5rem;
 }
 
 .button-box {
   text-align: center;
 }
 .button-join-us {
-  background-color: #2a4682;
-  color: #eee;
+  background-color: var(--light-secondary-color);
+  color: var(--light-primary-color);
   border-radius: 6px;
   box-shadow: 5px 5px 10px rgb(52, 52, 52);
   font-size: large;
   padding: 1rem 5rem;
 }
 
-.footer-content{
-    font-size: small;
-    border-top: 1px solid #2a4682;
-    margin-top: 3rem;
-    text-align: center;
+.footer-content {
+  font-size: small;
+  border-top: 1px solid var(--light-secondary-color);
+  margin-top: 3rem;
+  text-align: center;
 }
 
 /*Other Classes*/

@@ -93,7 +93,7 @@
         <ol class="budget-widget-instructions">
           <li>Enter your monthly expenditures</li>
           <li>Enter your monthly income</li>
-          <li>Analyze the results!</li>
+          <li>Analyze the results and get tips!</li>
         </ol>
         <img
           src="./images/main-budgeting-widget.jpg"
@@ -102,23 +102,52 @@
 
         <!--The Budgeter will be developed here - don't forget!-->
         <div class="widget-budgeter">
-          <form action="">
-
+          <form action="" class="widget-form-area">
+            <h3 id="widget-title">Budgeter 1.0</h3>
+            <br /><br />
+            <hr />
+            <!--Sample entry-->
+            <div class="widget-entry">
+              <p>#1</p>
+              <p>Expenditure</p>
+              <p>Groceries</p>
+              <p>27.87</p>
+            </div>
+            <br />
+            <hr />
             <!--Sample widget-item-->
             <div class="widget-item">
-              <span
-                ><label for="item-type-1">Item Type</label
-                ><select name="item-type-1" id="item-type-1">
-                  <option value="expenditure">Expenditure</option>
-                  <option value="Income">Income</option>
-                </select>
-                <input name="item-name" type="text" placeholder="Item Name" />
-                <input name="money-amount" type="number" placeholder="$1000" />
-              </span>
+              <label for="item-type-1">Entry:</label
+              ><select name="item-type-1" id="item-type-1" required>
+                <option value="expenditure">Expenditure</option>
+                <option value="Income">Income</option>
+              </select>
+              <input
+                name="item-name"
+                type="text"
+                placeholder="Item Name"
+                required
+              />
+              <input
+                name="money-amount"
+                type="number"
+                placeholder="$100"
+                required
+              />
             </div>
 
+            <br />
+
+            <hr />
+            <p id="widget-feedback">Feedback :</p>
+            <br /><br />
             <!--Need a button to add or remove items from the bottom-->
 
+            <div class="add-remove-buttons">
+              <button class="add-widget-item">Add New Item</button>
+              <button class="remove-widget-item">Remove Last Item</button>
+              <button class="evaluate-widget-item">Analyze</button>
+            </div>
           </form>
         </div>
       </section>
