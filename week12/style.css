@@ -1,3 +1,4 @@
+/*Elements*/
 * {
   box-sizing: border-box;
 }
@@ -10,19 +11,108 @@ body {
   font-size: large;
   background-color: #eee;
   color: #2a4682;
-
 }
 
-.main-section{
-    padding: 0 2rem;
-
+a {
+  color: #4c68a4;
+  font-weight: bold;
+  text-decoration: none;
+}
+a:hover {
+  color: black;
+  font-weight: bold;
 }
 
-p, pre, li {
+p,
+pre,
+li, label {
   font-family: sans-serif;
   line-height: 1.5rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "lato";
+}
+
+/*Classes*/
+.main-section {
+  padding: 0 2rem;
+}
+
+.header-menu-button {
+  text-align: center;
+  background-color: #2a4682;
+  color: #eee;
+  padding: 0.5rem;
+}
+
+.header-menu-button h2 {
+  margin: 0;
+}
+
+.header-menu-button h2:hover {
+  color: black;
+}
+
+
+.navigation-bar {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  gap: 2rem;
+  background-color: #4c68a4;
+}
+
+.navigation-bar a {
+  color: #eee;
+}
+
+.navigation-bar a:hover {
+  color: black;
+}
+
+.budget-widget-instructions {
+  background-color: #2a4682;
+  color: #eee;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.widget-budgeter{
+    background-color: #2a4682;
+    color: #eee;
+
+}
+
+.wdiget-item{
+
+}
+
+.button-box {
+  text-align: center;
+}
+.button-join-us {
+  background-color: #2a4682;
+  color: #eee;
+  border-radius: 6px;
+  box-shadow: 5px 5px 10px rgb(52, 52, 52);
+  font-size: large;
+  padding: 1rem 5rem;
+}
+
+.footer-content{
+    font-size: small;
+    border-top: 1px solid #2a4682;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+/*Other Classes*/
+.hidden {
+  display: none;
 }

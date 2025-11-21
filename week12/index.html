@@ -32,8 +32,11 @@
     <header class="header-section">
       <img src="./images/hero-image.jpg" alt="Hero Image with smiling people" />
 
-      <h1>Menu</h1>
-      <nav class="navigation-bar">
+      <div class="header-menu-button">
+        <h2>Menu</h2>
+      </div>
+
+      <nav class="navigation-bar hidden">
         <a href="#">Home</a>
         <a href="./about-us-reviews">About Us/Reviews</a>
         <a href="#">Join Today!</a>
@@ -87,7 +90,7 @@
           your habits and start making smarter choices right away. Give it a try
           and see how quickly small changes can turn into real progress!
         </p>
-        <ol>
+        <ol class="budget-widget-instructions">
           <li>Enter your monthly expenditures</li>
           <li>Enter your monthly income</li>
           <li>Analyze the results!</li>
@@ -97,15 +100,33 @@
           alt="Paper and calculator on a desk"
         />
 
+        <!--The Budgeter will be developed here - don't forget!-->
         <div class="widget-budgeter">
-          <!--The Budgeter will be developed here - don't forget!-->
+          <form action="">
+
+            <!--Sample widget-item-->
+            <div class="widget-item">
+              <span
+                ><label for="item-type-1">Item Type</label
+                ><select name="item-type-1" id="item-type-1">
+                  <option value="expenditure">Expenditure</option>
+                  <option value="Income">Income</option>
+                </select>
+                <input name="item-name" type="text" placeholder="Item Name" />
+                <input name="money-amount" type="number" placeholder="$1000" />
+              </span>
+            </div>
+
+            <!--Need a button to add or remove items from the bottom-->
+
+          </form>
         </div>
       </section>
 
       <br /><br />
       <section class="why-us-section">
         <h2>Why us?</h2>
-        <img src="./images/main-ceo-bernard.png" alt="Bernard the CEO">
+        <img src="./images/main-ceo-bernard.png" alt="Bernard the CEO" />
         <p>
           Our mission comes from a very real place. Before starting this
           company, our CEO spent years feeling overwhelmed by budgeting apps
@@ -127,8 +148,10 @@
           join us today and start building the financial future you’ve always
           wanted!
         </p>
-        <br>
-        <button class="button-join-us">Join Today!</button>
+        <br />
+        <section class="button-box">
+          <a href=""><button class="button-join-us">Join Today!</button></a>
+        </section>
       </section>
     </main>
 
@@ -136,7 +159,6 @@
       <section class="footer-content">
         <p>&copy; 2025 Thomas Gardner</p>
       </section>
-      
     </footer>
   </body>
 </html>
