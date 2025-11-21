@@ -151,10 +151,19 @@ h6 {
   margin-right: 0.5rem;
 }
 
-.button-box {
+.why-us-content{
+    text-align: center;
+}
+
+.why-us-content img{
+    width: 50%;
+    text-align: center;
+}
+
+.footer-button-box {
   text-align: center;
 }
-.button-join-us {
+.footer-button-join-us {
   background-color: var(--light-secondary-color);
   color: var(--light-primary-color);
   border-radius: 6px;
