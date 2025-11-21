@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  font-size: large;
+}
+
+.main-section{
+    padding: 0 2rem;
+
+}
+
+p, pre, li {
+  font-family: sans-serif;
+  color: #2a4682;
+  line-height: 1.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "lato";
+}
