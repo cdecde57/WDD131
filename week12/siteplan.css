@@ -9,6 +9,9 @@ img {
 body {
   font-size: large;
   padding: 2rem;
+  background-color: #eee;
+  color: #2a4682;
+
 }
 
 .light-color-block {
