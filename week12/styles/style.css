@@ -2,8 +2,8 @@
 :root {
   --light-primary-color: #eee;
   --light-secondary-color: #2a4682;
-  --light-anchor-primary: #4c68a4;
-  --light-anchor-secondary: black;
+  --light-complimentary-primary: #4c68a4;
+  --light-complimentary-secondary: black;
 }
 
 /*Elements*/
@@ -22,16 +22,17 @@ body {
 }
 
 a {
-  color: var(--light-anchor-primary);
+  color: var(--light-complimentary-primary);
   font-weight: bold;
   text-decoration: none;
 }
 a:hover {
-  color: var(--light-anchor-secondary);
+  color: var(--light-complimentary-secondary);
   font-weight: bold;
 }
 
 p,
+b,
 pre,
 li,
 em,
@@ -87,7 +88,7 @@ h6 {
   flex-flow: column wrap;
   align-items: center;
   gap: 2rem;
-  background-color: var(--light-anchor-primary);
+  background-color: var(--light-complimentary-primary);
 }
 
 .navigation-bar a {
@@ -95,7 +96,7 @@ h6 {
 }
 
 .navigation-bar a:hover {
-  color: var(--light-anchor-secondary);
+  color: var(--light-complimentary-secondary);
 }
 
 .footer-button-box {

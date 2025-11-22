@@ -35,14 +35,14 @@
 }
 
 .widget-entry p {
-  border-right: 2px solid var(--light-anchor-secondary);
+  border-right: 2px solid var(--light-complimentary-secondary);
   padding: 0 0.5rem;
   display: inline-block;
   font-size: medium;
 }
 
 .widget-entry p:first-of-type {
-  border-left: 2px solid var(--light-anchor-secondary);
+  border-left: 2px solid var(--light-complimentary-secondary);
 }
 
 #widget-feedback {

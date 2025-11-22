@@ -35,3 +35,36 @@
     background-color: var(--light-secondary-color);
     padding: 2rem;
 }
+
+.comments-section{
+    display: flex;
+    flex-flow: column wrap ;
+    gap: 1rem;
+    background-color: var(--light-secondary-color);
+    color: var(--light-primary-color);
+    padding: 2rem 0;
+    font-size: medium;
+}
+
+.comments-section-comment{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    flex-grow: 0;
+    gap: 1rem;
+    border: 1px solid var(--light-primary-color);
+}
+
+.comment-section-image{
+    height: 20%;
+    width: 20%;
+}
+.comment-section-comment{
+    background-color: var(--light-complimentary-primary);
+    padding: 0.5rem;
+    font-size: small;
+    margin: 0;
+}
+
+.comment-section-name{
+}
