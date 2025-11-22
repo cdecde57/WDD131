@@ -34,8 +34,10 @@ a:hover {
 p,
 pre,
 li,
+em,
 label,
 input,
+textarea,
 option,
 select,
 button {
@@ -45,7 +47,8 @@ button {
 
 input,
 select,
-button {
+button,
+textarea {
   border-radius: 5px;
   background-color: var(--light-primary-color);
 }
@@ -59,7 +62,7 @@ h6 {
   font-family: "lato";
 }
 
-/*Classes*/
+/*Header and footer Classes*/
 .main-section {
   padding: 0 2rem;
 }
@@ -95,71 +98,6 @@ h6 {
   color: var(--light-anchor-secondary);
 }
 
-.budget-widget-instructions {
-  background-color: var(--light-secondary-color);
-  color: var(--light-primary-color);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-#widget-title {
-  margin-left: 0.5rem;
-}
-
-.widget-budgeter {
-  background-color: var(--light-secondary-color);
-  color: var(--light-primary-color);
-  padding: 1rem 0;
-}
-
-.widget-item input,
-.widget-item select {
-  width: 30%;
-  max-width: 300px;
-}
-
-.widget-item {
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 0.25rem;
-  font-size: medium;
-}
-
-.widget-entry {
-  text-align: center;
-}
-
-.widget-entry p {
-  border-right: 2px solid var(--light-anchor-secondary);
-  padding: 0 0.5rem;
-  display: inline-block;
-  font-size: medium;
-}
-
-.widget-entry p:first-of-type {
-  border-left: 2px solid var(--light-anchor-secondary);
-}
-
-#widget-feedback {
-  margin-left: 0.5rem;
-}
-.add-remove-buttons {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: end;
-  gap: 0.25rem;
-  margin-right: 0.5rem;
-}
-
-.why-us-content {
-  text-align: center;
-}
-
-.why-us-content img {
-  width: 50%;
-  text-align: center;
-}
-
 .footer-button-box {
   text-align: center;
 }
@@ -179,7 +117,7 @@ h6 {
   text-align: center;
 }
 
-/*Other Classes*/
+/*Other classes*/
 .hidden {
   display: none;
 }
