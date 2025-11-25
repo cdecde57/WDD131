@@ -81,13 +81,7 @@
     justify-content: space-evenly;
   }
 
-  .comments-form-section{
+  .comments-form-section, .comments-section{
     justify-self: center;
     width: 70%;
   }
-
-  .comments-section{
-    justify-self: center;
-    width: 70%;
-  }
-}
