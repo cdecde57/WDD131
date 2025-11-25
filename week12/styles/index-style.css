@@ -1,14 +1,22 @@
 /*Classes*/
 
-  .welcome-image{
-    box-shadow: 5px 5px 10px;
-    margin: 1rem;
-  }
+.welcome-image {
+  box-shadow: 5px 5px 10px;
+  margin: 1rem;
+}
 
-  .budget-image{
-    box-shadow: 5px 5px 10px;
-    margin: 1rem;
-  }
+.welcome-image:hover {
+  transform: scale(1.05);
+}
+
+.budget-image {
+  box-shadow: 5px 5px 10px;
+  margin: 1rem;
+}
+
+.budget-image:hover {
+  transform: scale(1.05);
+}
 
 .budget-widget-instructions {
   background-color: var(--light-secondary-color);
@@ -75,36 +83,37 @@
   text-align: center;
 }
 
+.why-us-content img:hover {
+  transform: scale(1.05);
+}
 
 /*Media Query for the desktop*/
 @media screen and (min-width: 800px) {
-  .welcome-image{
+  .welcome-image {
     width: 30%;
     float: right;
-    
   }
 
-  .widget-instruction-article{
+  .widget-instruction-article {
     display: flex;
     flex-flow: row wrap;
     width: 100%;
-
   }
 
   /*The budget-widget-instructions and budget-image will share a line. Can use a grid or use percentages for the spacing - currently doing 60/30%*/
-  .budget-widget-instructions{
+  .budget-widget-instructions {
     width: 60%;
   }
-  .budget-image{
+  .budget-image {
     width: 30%;
   }
 
-  .widget-budgeter{
+  .widget-budgeter {
     width: 80%;
     margin: 0 auto;
   }
 
-  .why-us-image{
+  .why-us-image {
     width: 30%;
     max-width: 300px;
     float: left;

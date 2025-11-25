@@ -90,7 +90,6 @@ h6 {
   gap: 2rem;
   background-color: var(--light-complimentary-primary);
   font-family: sans-serif;
-
 }
 
 .navigation-bar a {
@@ -127,16 +126,13 @@ h6 {
 
 /*My media query*/
 @media screen and (min-width: 800px) {
-  .navigation-bar{
+  .navigation-bar {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     gap: 20%;
   }
-  .header-menu-button{
+  .header-menu-button {
     display: none;
   }
-  
 }
-
-
