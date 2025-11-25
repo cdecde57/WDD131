@@ -21,6 +21,7 @@
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/index-style.css" />
+    <script src="./scripts/index.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,8 +38,8 @@
         <h2>Menu</h2>
       </div>
 
-      <nav class="navigation-bar hidden">
-        <a href="#">Home</a>
+      <nav class="navigation-bar">
+        <a href="./index.html">Home</a>
         <a href="./about-us-reviews.html">About Us/Reviews</a>
         <a href="#">Join Today!</a>
       </nav>
@@ -49,6 +50,13 @@
 
       <section class="welcome-section">
         <h2>Welcome!</h2>
+
+        <img
+          src="./images/main-welcome.jpg"
+          alt="Image of piggy bank"
+          class="welcome-image"
+        />
+
         <p>
           You deserve a financial life that feels strong, confident, and in your
           control and we’re here to help you make that happen. Our vision
@@ -75,7 +83,6 @@
           every step of the way. When you're ready, go ahead and create your own
           account to start building the financial future you want!
         </p>
-        <img src="./images/main-welcome.jpg" alt="Image of piggy bank" />
       </section>
 
       <br /><br />
@@ -91,17 +98,21 @@
           your habits and start making smarter choices right away. Give it a try
           and see how quickly small changes can turn into real progress!
         </p>
-        <ol class="budget-widget-instructions">
-          <li>Enter your monthly expenditures</li>
-          <li>Enter your monthly income</li>
-          <li>Analyze the results, and get tips!</li>
-        </ol>
-        <img
-          src="./images/main-budgeting-widget.jpg"
-          alt="Paper and calculator on a desk"
-        />
-        <h1>PUT THE LOGO ON THE MENU</h1>
-        <br /><br /><br>
+
+        <article class="widget-instruction-article">
+          <img
+            src="./images/main-budgeting-widget.jpg"
+            alt="Paper and calculator on a desk"
+            class="budget-image"
+          />
+          <ol class="budget-widget-instructions">
+            <li>Enter your monthly expenditures</li>
+            <li>Enter your monthly income</li>
+            <li>Analyze the results, and get tips!</li>
+          </ol>
+        </article>
+
+        <br /><br /><br />
         <hr />
         <!--The Budgeter will be developed here - don't forget!-->
         <div class="widget-budgeter">
@@ -160,7 +171,10 @@
         <h2>Why us?</h2>
         <br />
         <article class="why-us-content">
-          <img src="./images/main-ceo-bernard.png" alt="Bernard the CEO" />
+
+          <section class="why-us-image">
+                      <img src="./images/main-ceo-bernard.png" alt="Bernard the CEO" />
+          </section>
           <p>
             Our mission comes from a very real place. Before starting this
             company, our CEO spent years feeling overwhelmed by budgeting apps

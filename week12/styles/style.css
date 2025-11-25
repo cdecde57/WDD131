@@ -84,11 +84,13 @@ h6 {
 }
 
 .navigation-bar {
-  display: flex;
+  display: none;
   flex-flow: column wrap;
   align-items: center;
   gap: 2rem;
   background-color: var(--light-complimentary-primary);
+  font-family: sans-serif;
+
 }
 
 .navigation-bar a {
@@ -119,6 +121,22 @@ h6 {
 }
 
 /*Other classes*/
-.hidden {
-  display: none;
+.display-menu {
+  display: flex;
 }
+
+/*My media query*/
+@media screen and (min-width: 800px) {
+  .navigation-bar{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 20%;
+  }
+  .header-menu-button{
+    display: none;
+  }
+  
+}
+
+
