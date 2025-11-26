@@ -8,10 +8,10 @@ function paintHTML() {
   // Identify the location of the 'entry section' in the HTML
   let widgetSection = document.querySelector(".widget-entry-section");
 
-  // Generate the dynamic HTML elements
-
   //  /!\  Future note   /!\
-  // Because I am using innerHTML with user supplied input, XSS is very easy to perform here. I changed this in the about-us section to textContent, but haven't implemented it here.
+  // Because I am using innerHTML with user supplied input, XSS is very easy to perform here. I changed this in the about-us section to textContent, but haven't implemented it here since it takes a lot of time, but HTML templates are faster and easier, just insecure.
+
+  // Generate the dynamic HTML elements
   let widgetSectionHTML = "";
   WIDGET_ENTRIES.forEach((entry, index, array) => {
     widgetSectionHTML += `
@@ -143,14 +143,6 @@ function giveFeedback() {
 
 // Initiate general page dynamics
 function init() {
-  // Setup an event listener to open / close the menu when the 'menu' button is clicked.
-  let menuButton = document.querySelector(".header-menu-button");
-  let menuBar = document.querySelector(".navigation-bar");
-
-  menuButton.addEventListener("click", () => {
-    menuBar.classList.toggle("display-menu");
-  });
-
   // Setup an event listener when the user clicks the 'add entry' button
   let addEntryButton = document.querySelector(".add-widget-item");
   addEntryButton.addEventListener("click", addEntry);
@@ -162,11 +154,6 @@ function init() {
   // Setup an event listener for when the user clicks the 'analyze' button
   let analyzeButton = document.querySelector(".evaluate-widget-item");
   analyzeButton.addEventListener("click", giveFeedback);
-
-  /**
-   * I need to add code to work with the local storage!
-   * localStorage.setItem("widget_entries", WIDGET_ENTRIES); // Converts everything to a string. Need to find out how to get it into local storage safely
-   */
 
   // Paint the budget widget entries
   paintEntries();
