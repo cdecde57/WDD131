@@ -59,7 +59,14 @@ function addEntry() {
   let entryAmount = document.querySelector("#item-amount").value;
 
   // If the user didn't enter valid data then don't add a new item to the vector
-  if (entryType === "" || entryName === "" || entryAmount === "" || entryType === undefined || entryName === undefined || entryAmount === undefined) {
+  if (
+    entryType === "" ||
+    entryName === "" ||
+    entryAmount === "" ||
+    entryType === undefined ||
+    entryName === undefined ||
+    entryAmount === undefined
+  ) {
     return;
   } else {
     WIDGET_ENTRIES.push({ entryType, entryName, entryAmount });
@@ -96,7 +103,7 @@ function analyzeBudget() {
   });
 
   // Return the profit of the user's budget if any
-  return (Math.round(profit * 100) / 100);
+  return Math.round(profit * 100) / 100;
 }
 
 // Generates a random number
@@ -110,8 +117,16 @@ function giveFeedback() {
   let profit = analyzeBudget();
 
   // Tip and congratulation messages depending on how the user budgets
-  let helpMessages = ["Use the 24-hour rule before making purchases over $50 to avoid impulse buying.", "Live below your means so you always have money left over at the end of the month.", "Prioritize needs over wants to ensure your essentials are always covered first."];
-  let congratzMessages = ["Great job staying on track with your budget!", "You're doing an excellent job managing your money wisely!", "Keep up the fantastic work with your spending habits!"];
+  let helpMessages = [
+    "Use the 24-hour rule before making purchases over $50 to avoid impulse buying.",
+    "Live below your means so you always have money left over at the end of the month.",
+    "Prioritize needs over wants to ensure your essentials are always covered first.",
+  ];
+  let congratzMessages = [
+    "Great job staying on track with your budget!",
+    "You're doing an excellent job managing your money wisely!",
+    "Keep up the fantastic work with your spending habits!",
+  ];
 
   let feedback = "";
   // Evelaute which message / piece of feedback to give

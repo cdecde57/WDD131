@@ -146,9 +146,9 @@ function addComment(comment, doSave = true) {
   // We'll increase the comment count by 1 so we can continue tracking comment IDs appropriately and add the record into our global variable
   COMMENT_COUNT++;
 
-  // If we're adding a new comment and want to save, then we'll store it in local storage
+  // If we're adding a new comment and want to save it, then we'll store it in local storage. It's important we don't save imported or previously stored comments to avoid duplicates
   if (doSave) {
-    // We'll track the new comment in the global variables if we're saving it locally as well, otherwise we don't reference it again so there's no need.
+    // We'll track the new comment in the global variable so we can save it with 'localStorageInit'.
     COMMENTS.push({
       fullName: name,
       reviews: 0,
@@ -163,15 +163,15 @@ function addComment(comment, doSave = true) {
 
 // Initiate the local storage : doOverride will cause local storage to be updated to reflect the current global variables
 function localStorageInit(doOverride = false) {
-  // If we haven't stored things previously, store the global variable 'comments' which will be empty, but now ready for use
+  // If we haven't stored things previously, we'll store the global variable 'comments' which will be empty, but now local storage is ready for use
   if (localStorage.getItem("comments") === null || doOverride) {
     localStorage.setItem("comments", JSON.stringify(COMMENTS));
   }
 }
 
-// Will set the global variables to match our local storage
+// Will set the global variables to match our local storage. Otherwise adding a new comment will essentially wipe what we had stored previously
 function globalVarInit() {
-  // If there's a comment stored in local storage previously, we'll be able to use it again
+  // If there's a comment stored in local storage previously, we will continue to track it
   COMMENTS = JSON.parse(localStorage.getItem("comments"));
 }
 
