@@ -100,15 +100,9 @@ function addComment(comment) {
   }
 
   // If the user didn't provide a valid name or comment content, then we'll just return.
-  if (name === undefined || content === undefined) {
+  if (name === "" || content === "" || name === undefined || content === undefined) {
     return;
   }
-
-  // We find the new comment template's name and comment values. I use dynamic IDs to keep track. This way I can use textContent instead of innerHTML which prevents XSS
-  let newCommentName = document.querySelector(`#comment_name_${COMMENT_COUNT}`);
-  let newCommentValue = document.querySelector(
-    `#comment_content_${COMMENT_COUNT}`
-  );
 
   // Create a comment template
   let commentSection = document.querySelector(".comments-section");
@@ -128,11 +122,17 @@ function addComment(comment) {
   // Add the comment template into the site. Once done here we can modify the username and actual comment
   commentSection.innerHTML += newComment;
 
+  // We find the new comment template's name and comment values. I use dynamic IDs to keep track. This way I can use textContent instead of innerHTML which prevents XSS
+  let newCommentName = document.querySelector(`#comment_name_${COMMENT_COUNT}`);
+  let newCommentValue = document.querySelector(
+    `#comment_content_${COMMENT_COUNT}`
+  );
+
   // Update the name and content of the comment template
   newCommentName.textContent = `Name: ${name}`;
   newCommentValue.textContent = content;
 
-  // We'll increase the comment count by 1 so we can continue tracking appropriately
+  // We'll increase the comment count by 1 so we can continue tracking comment IDs appropriately
   COMMENT_COUNT++;
 }
 
@@ -152,6 +152,7 @@ function init() {
   let submitComment = document.querySelector(".comments-form-submit");
   submitComment.addEventListener("click", addComment);
 
+  // Add the 3 default comments
   addComment(COMMENTS[3]);
   addComment(COMMENTS[4]);
   addComment(COMMENTS[5]);

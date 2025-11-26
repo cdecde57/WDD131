@@ -55,7 +55,7 @@ function addEntry() {
   let entryAmount = document.querySelector("#item-amount").value;
 
   // If the user didn't enter valid data then don't add a new item to the vector
-  if (entryType === "" || entryName === "" || entryAmount === "") {
+  if (entryType === "" || entryName === "" || entryAmount === "" || entryType === undefined || entryName === undefined || entryAmount === undefined) {
     return;
   } else {
     WIDGET_ENTRIES.push({ entryType, entryName, entryAmount });
