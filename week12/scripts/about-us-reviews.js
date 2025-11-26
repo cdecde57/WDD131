@@ -1,5 +1,6 @@
 import userComments from "./about-us-reviews.mjs";
 
+// Global variables for our imported comments, the current featured review, and a tracker for the comments posted so far
 let COMMENTS = [...userComments];
 let CURRENT_REVIEW = 0;
 let COMMENT_COUNT = 0;

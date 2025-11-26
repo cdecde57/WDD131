@@ -1,5 +1,6 @@
 import budgetWidgetEntries from "./index.mjs";
 
+// Global variable for default widget entries
 let WIDGET_ENTRIES = [...budgetWidgetEntries];
 
 // Will update the HTML of the 'entry section' - used in 'paintEntries'
