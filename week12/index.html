@@ -120,19 +120,14 @@
           <h3 id="widget-title">Budgeter 1.0</h3>
           <br /><br />
           <hr />
-          <!--Sample entry-->
-          <div class="widget-entry">
-            <p>#1</p>
-            <p>Expenditure</p>
-            <p>Groceries</p>
-            <p>27.87</p>
-          </div>
+
+          <section class="widget-entry-section"></section>
+
           <br />
           <hr />
-          <!--Sample widget-item-->
           <div class="widget-item">
-            <label for="item-type-1">Entry:</label
-            ><select name="item-type-1" id="item-type-1" required>
+            <label for="item-type">Entry:</label
+            ><select name="item-type" required id="item-type">
               <option value="expenditure">Expenditure</option>
               <option value="Income">Income</option>
             </select>
@@ -141,12 +136,14 @@
               type="text"
               placeholder="Item Name"
               required
+              id="item-name"
             />
             <input
               name="money-amount"
               type="number"
               placeholder="$100"
               required
+              id="item-amount"
             />
           </div>
 
