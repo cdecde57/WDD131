@@ -2,6 +2,7 @@ import userComments from "./about-us-reviews.mjs";
 
 let COMMENTS = [...userComments];
 let CURRENT_REVIEW = 0;
+let COMMENT_COUNT = 0;
 
 // Generates a random number
 function randomNum(max) {
@@ -22,7 +23,7 @@ function updateFeaturedComment(entry) {
   }
 
   // Paint a new featured comment
-  
+
   // Update the image source and alt value
   let reviewImage = document.querySelector("#review-image");
   reviewImage.setAttribute("src", image);
@@ -39,7 +40,6 @@ function updateFeaturedComment(entry) {
   //Update the review's comment
   let reviewComment = document.querySelector(".widget-review");
   reviewComment.textContent = comment;
-
 }
 
 function evaluateLeft() {
@@ -84,6 +84,58 @@ function evaluateRight() {
   return;
 }
 
+function addComment(comment) {
+  // We'll identify the name and content either from the user adding a new comment, or from a 'comment' object being passed.
+  let name = "";
+  let content = "";
+
+  // If we get an event object, we know it was a submitted comment
+  if (comment.constructor.name === "PointerEvent") {
+    name = document.querySelector(".comments-form-name").value;
+    content = document.querySelector(".comments-form-comment").value;
+  } else {
+    // If it is not a submission event then we'll add a new comment assuming the passed argument is a comment object.
+    name = comment.fullName;
+    content = comment.comment;
+  }
+
+  // If the user didn't provide a valid name or comment content, then we'll just return.
+  if (name === undefined || content === undefined) {
+    return;
+  }
+
+  // We find the new comment template's name and comment values. I use dynamic IDs to keep track. This way I can use textContent instead of innerHTML which prevents XSS
+  let newCommentName = document.querySelector(`#comment_name_${COMMENT_COUNT}`);
+  let newCommentValue = document.querySelector(
+    `#comment_content_${COMMENT_COUNT}`
+  );
+
+  // Create a comment template
+  let commentSection = document.querySelector(".comments-section");
+  let newComment = `
+        <article class="comments-section-comment">
+          <img
+            src="./images/user.webp"
+            alt="Default user image"
+            class="comment-section-image"
+          />
+          <b class="comment-section-name" id="comment_name_${COMMENT_COUNT}">Name:</b>
+          <p class="comment-section-comment" id="comment_content_${COMMENT_COUNT}">
+          </p>
+        </article>
+    `;
+
+  // Add the comment template into the site. Once done here we can modify the username and actual comment
+  commentSection.innerHTML += newComment;
+
+  // Update the name and content of the comment template
+  newCommentName.textContent = `Name: ${name}`;
+  newCommentValue.textContent = content;
+
+  // We'll increase the comment count by 1 so we can continue tracking appropriately
+  COMMENT_COUNT++;
+}
+
 function init() {
   // Add a random comment into the featured comments section.
   CURRENT_REVIEW = randomNum(3);
@@ -95,6 +147,14 @@ function init() {
 
   let rightArrow = document.querySelector("#widget-review-right");
   rightArrow.addEventListener("click", evaluateRight);
+
+  // Setup a listener for when the user submits a new comment
+  let submitComment = document.querySelector(".comments-form-submit");
+  submitComment.addEventListener("click", addComment);
+
+  addComment(COMMENTS[3]);
+  addComment(COMMENTS[4]);
+  addComment(COMMENTS[5]);
 }
 
 init();
