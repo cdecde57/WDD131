@@ -9,6 +9,9 @@ function paintHTML() {
   let widgetSection = document.querySelector(".widget-entry-section");
 
   // Generate the dynamic HTML elements
+
+  //  /!\  Future note   /!\
+  // Because I am using innerHTML with user supplied input, XSS is very easy to perform here. I changed this in the about-us section to textContent, but haven't implemented it here.
   let widgetSectionHTML = "";
   WIDGET_ENTRIES.forEach((entry, index, array) => {
     widgetSectionHTML += `
@@ -73,9 +76,9 @@ function removeEntry() {
 // Will ensure the number returned is a negative if the entry being analyzed is an expenditure or a positive number if it's income
 function convertNumber(budgetEntry) {
   if (budgetEntry.entryType.toLowerCase() === "expenditure") {
-    return -1 * budgetEntry.entryAmount;
+    return Number(-1 * budgetEntry.entryAmount);
   } else {
-    return budgetEntry.entryAmount;
+    return Number(budgetEntry.entryAmount);
   }
 }
 
@@ -93,7 +96,7 @@ function analyzeBudget() {
   });
 
   // Return the profit of the user's budget if any
-  return profit;
+  return (Math.round(profit * 100) / 100);
 }
 
 // Generates a random number
@@ -103,11 +106,12 @@ function randomNum(max) {
 
 // Give the user feedback based on their budget
 function giveFeedback() {
+  // Found on stack overflow that '(Math.round(var * 100) / 100)' will ensure it's rounded to the second decimal place
   let profit = analyzeBudget();
 
   // Tip and congratulation messages depending on how the user budgets
-  let helpMessages = ["Tip 1", "Tip 2", "Tip 3"];
-  let congratzMessages = ["GJ 1", "GJ 2", "GJ 3"];
+  let helpMessages = ["Use the 24-hour rule before making purchases over $50 to avoid impulse buying.", "Live below your means so you always have money left over at the end of the month.", "Prioritize needs over wants to ensure your essentials are always covered first."];
+  let congratzMessages = ["Great job staying on track with your budget!", "You're doing an excellent job managing your money wisely!", "Keep up the fantastic work with your spending habits!"];
 
   let feedback = "";
   // Evelaute which message / piece of feedback to give

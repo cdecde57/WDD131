@@ -1,15 +1,17 @@
 import userComments from "./about-us-reviews.mjs";
 
 // Global variables for our imported comments, the current featured review, and a tracker for the comments posted so far
-let COMMENTS = [...userComments];
-let CURRENT_REVIEW = 0;
-let COMMENT_COUNT = 0;
+const IMPORTED_COMMENTS = [...userComments]; // A constant variable for all imported comments
+let CURRENT_REVIEW = 0; // A variable used to track the current featured review
+let COMMENT_COUNT = 0; // Tracks the number of user comments. We use this to create dynamic IDs
+let COMMENTS = []; // Tracks all user comments. This is something we store in local storage.
 
 // Generates a random number
 function randomNum(max) {
   return Math.floor(Math.random() * max);
 }
 
+// Update the featured review that's shown to the user
 function updateFeaturedComment(entry) {
   // Extract the comment values from the object sent
   let fullName = entry.fullName;
@@ -43,6 +45,7 @@ function updateFeaturedComment(entry) {
   reviewComment.textContent = comment;
 }
 
+// For the left button by the featured review
 function evaluateLeft() {
   // Move the 'current review' index to the left
   switch (CURRENT_REVIEW) {
@@ -60,12 +63,13 @@ function evaluateLeft() {
   }
 
   // Re-paint the HTML
-  updateFeaturedComment(COMMENTS[CURRENT_REVIEW]);
+  updateFeaturedComment(IMPORTED_COMMENTS[CURRENT_REVIEW]);
   return;
 }
 
+// For the right button by the featured review
 function evaluateRight() {
-  // Move the 'current review' index to the left
+  // Move the 'current review' index to the right
   switch (CURRENT_REVIEW) {
     case 0:
       CURRENT_REVIEW = 1;
@@ -81,11 +85,12 @@ function evaluateRight() {
   }
 
   // Re-paint the HTML
-  updateFeaturedComment(COMMENTS[CURRENT_REVIEW]);
+  updateFeaturedComment(IMPORTED_COMMENTS[CURRENT_REVIEW]);
   return;
 }
 
-function addComment(comment) {
+// Create a new user comment. 'doSave' will ensure the comment is stored in local storage
+function addComment(comment, doSave = true) {
   // We'll identify the name and content either from the user adding a new comment, or from a 'comment' object being passed.
   let name = "";
   let content = "";
@@ -101,7 +106,12 @@ function addComment(comment) {
   }
 
   // If the user didn't provide a valid name or comment content, then we'll just return.
-  if (name === "" || content === "" || name === undefined || content === undefined) {
+  if (
+    name === "" ||
+    content === "" ||
+    name === undefined ||
+    content === undefined
+  ) {
     return;
   }
 
@@ -133,14 +143,53 @@ function addComment(comment) {
   newCommentName.textContent = `Name: ${name}`;
   newCommentValue.textContent = content;
 
-  // We'll increase the comment count by 1 so we can continue tracking comment IDs appropriately
+  // We'll increase the comment count by 1 so we can continue tracking comment IDs appropriately and add the record into our global variable
   COMMENT_COUNT++;
+
+  if (doSave) {
+    // We'll track the new comment in the global variables if we're saving it locally as well, otherwise we don't reference it again so there's no need.
+    COMMENTS.push({
+      fullName: name,
+      reviews: 0,
+      profileImage: "#",
+      comment: content,
+    });
+
+    // Update local storage to continue tracking the comments
+    localStorageInit(true);
+  }
+}
+
+// Initiate the local storage : doOverride will cause local storage to be updated to reflect the current global variables
+function localStorageInit(doOverride = false) {
+  // If we haven't stored things previously, store the global variable 'comments'
+  if (localStorage.getItem("comments") === null || doOverride) {
+    localStorage.setItem("comments", JSON.stringify(COMMENTS));
+  }
+}
+
+// Will set the global variables to match our local storage
+function globalVarInit() {
+  COMMENT_COUNT = localStorage.getItem("comment_count");
+  COMMENTS = JSON.parse(localStorage.getItem("comments"));
+}
+
+// Used to initiate imported or previously stored comments
+function commentInit(value) {
+  // Add the comment. Ensure we don't store it because otherwise we'll duplicate comments
+  addComment(value, false);
 }
 
 function init() {
+  // Initiate the local storage initially if it isn't already
+  localStorageInit();
+
+  // Initiate the global variables after local storage is initiated (if localstorage had something, they'll update, otherwise they'll stay as default values)
+  globalVarInit();
+
   // Add a random comment into the featured comments section.
   CURRENT_REVIEW = randomNum(3);
-  updateFeaturedComment(COMMENTS[CURRENT_REVIEW]);
+  updateFeaturedComment(IMPORTED_COMMENTS[CURRENT_REVIEW]);
 
   // Setup a listener for when the user uses the right or left arrows so the featured comment changes.
   let leftArrow = document.querySelector("#widget-review-left");
@@ -153,10 +202,13 @@ function init() {
   let submitComment = document.querySelector(".comments-form-submit");
   submitComment.addEventListener("click", addComment);
 
-  // Add the 3 default comments
-  addComment(COMMENTS[3]);
-  addComment(COMMENTS[4]);
-  addComment(COMMENTS[5]);
+  // Add the default comments and any in local storage
+
+  let importedComments = IMPORTED_COMMENTS.slice(3, 6); // Specific imported user comments
+  let storedComments = JSON.parse(localStorage.getItem("comments"));
+
+  importedComments.map(commentInit);
+  storedComments.map(commentInit);
 }
 
 init();
