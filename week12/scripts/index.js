@@ -164,9 +164,9 @@ init();
 /**
  * My current Pseudo Code 
  * 
-0. Draw upon an EJS module to get default data, sort it, and store it in the 'entry' vector
-1. On page load - populate the budgeter with the 'entry' vector			        -/
-2. Add New Item - Add entry information into the 'entry' vector and add HTML	-|Share an 'add item' function
+0. Draw upon an EJS module to get default data, sort it, and store it in the 'entry' vector (nevermind - only doing local storage on comments page since it doesn't seem realistic to place it in a demo)
+1. On page load - populate the budgeter with the 'entry' vector			            -/
+2. Add New Item - Add entry information into the 'entry' vector and add HTML	  -|Share an 'add item' function
 3. Remove Last Item - Pop the last item from the vector and re-paint the widget	-\
 4. Analyze - Add income, subtract expenditures. If positive then give a congratz, if negative give a budgeting tip in the 'feedback' row.
 
