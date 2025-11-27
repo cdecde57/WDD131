@@ -42,7 +42,7 @@ function updateFeaturedComment(entry) {
 
   //Update the review's comment
   let reviewComment = document.querySelector(".widget-review");
-  reviewComment.textContent = comment;
+  reviewComment.textContent = `"${comment}"`;
 }
 
 // For the left button by the featured review
