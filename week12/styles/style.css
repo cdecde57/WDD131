@@ -81,7 +81,7 @@ h6 {
 }
 
 .header-menu-button h2:hover {
-  color: black;
+  color: var(--light-complimentary-secondary);
 }
 
 .navigation-bar {
