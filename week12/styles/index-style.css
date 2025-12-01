@@ -87,6 +87,22 @@
   transform: scale(1.05);
 }
 
+.footer-button-box {
+  text-align: center;
+}
+.footer-button-join-us {
+  background-color: var(--light-secondary-color);
+  color: var(--light-primary-color);
+  border-radius: 6px;
+  box-shadow: 5px 5px 10px rgb(52, 52, 52);
+  font-size: large;
+  padding: 1rem 5rem;
+}
+
+.footer-button-join-us:hover {
+  border: 2px solid black;
+}
+
 /*Media Query for the desktop*/
 @media screen and (min-width: 800px) {
   .welcome-image {

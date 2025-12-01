@@ -33,6 +33,7 @@ a:hover {
 
 p,
 b,
+a,
 pre,
 li,
 em,
@@ -98,18 +99,6 @@ h6 {
 
 .navigation-bar a:hover {
   color: var(--light-complimentary-secondary);
-}
-
-.footer-button-box {
-  text-align: center;
-}
-.footer-button-join-us {
-  background-color: var(--light-secondary-color);
-  color: var(--light-primary-color);
-  border-radius: 6px;
-  box-shadow: 5px 5px 10px rgb(52, 52, 52);
-  font-size: large;
-  padding: 1rem 5rem;
 }
 
 .footer-content {

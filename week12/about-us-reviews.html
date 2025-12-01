@@ -21,8 +21,10 @@
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./styles/style.css" />
     <link rel="stylesheet" href="./styles/aboutus-style.css" />
-    <script type="module" src="./scripts/about-us-reviews.js" defer></script>
-    <script type="module" src="./scripts/about-us-reviews.mjs" defer></script>
+    <script type="module" src="./scripts/about-us-reviews.js"></script>
+    <!--Module automatically uses defer and so I removed it since it was giving me an error on W3C validator-->
+    <script type="module" src="./scripts/about-us-reviews.mjs"></script>
+    <!--Module automatically uses defer and so I removed it since it was giving me an error on W3C validator-->
     <script src="./scripts/global.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -140,7 +142,6 @@
           class="comments-form-email"
         />
         <textarea
-          type="text"
           placeholder="Comment"
           required
           class="comments-form-comment"

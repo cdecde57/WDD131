@@ -209,11 +209,10 @@ function init() {
   importedComments.map(commentInit);
   storedComments.map(commentInit);
 
-    /**
+  /**
    * I need to add code to work with the local storage!
    * localStorage.setItem("TEST", test2); // Converts everything to a string. Need to find out how to get it into local storage safely
    */
-
 }
 
 init();
