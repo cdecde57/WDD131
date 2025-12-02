@@ -37,6 +37,7 @@ a,
 pre,
 li,
 em,
+td,
 label,
 input,
 textarea,
@@ -65,15 +66,12 @@ h6 {
 }
 
 /*Header and footer Classes*/
-.main-section {
-  padding: 0 2rem;
-}
-
 .header-menu-button {
   text-align: center;
   background-color: var(--light-secondary-color);
   color: var(--light-primary-color);
   padding: 0.5rem;
+
 }
 
 .header-menu-button h2 {
@@ -99,6 +97,10 @@ h6 {
 
 .navigation-bar a:hover {
   color: var(--light-complimentary-secondary);
+}
+
+.main-section {
+  padding: 0 2rem;
 }
 
 .footer-content {

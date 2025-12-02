@@ -6,7 +6,7 @@ let WIDGET_ENTRIES = [...budgetWidgetEntries];
 // Will update the HTML of the 'entry section' - used in 'paintEntries'
 function paintHTML() {
   // Identify the location of the 'entry section' in the HTML
-  let widgetSection = document.querySelector(".widget-entry-section");
+  let widgetSection = document.querySelector(".widget-entry-table");
 
   //  /!\  Future note   /!\
   // Because I am using innerHTML with user supplied input, XSS is very easy to perform here. I changed this in the about-us section to textContent, but haven't implemented it here since it takes a lot of time, but HTML templates are faster and easier, just insecure.
@@ -15,12 +15,12 @@ function paintHTML() {
   let widgetSectionHTML = "";
   WIDGET_ENTRIES.forEach((entry, index, array) => {
     widgetSectionHTML += `
-        <div class="widget-entry">
-            <p>#${index + 1}</p>
-            <p>${entry.entryType}</p>
-            <p>${entry.entryName}</p>
-            <p>${entry.entryAmount}</p>
-        </div>
+        <tr class="widget-entry">
+            <td>#${index + 1}</td>
+            <td>${entry.entryType}</td>
+            <td>${entry.entryName}</td>
+            <td>${entry.entryAmount}</td>
+        </tr>
           `;
   });
 

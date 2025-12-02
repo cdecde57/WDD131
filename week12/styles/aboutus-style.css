@@ -59,6 +59,7 @@
   flex-grow: 0;
   gap: 1rem;
   border: 1px solid var(--light-primary-color);
+  padding: 1rem;
 }
 
 .comment-section-image {
@@ -70,6 +71,7 @@
   padding: 0.5rem;
   font-size: small;
   margin: 0;
+  width: 100%;
 }
 
 @media screen and (min-width: 800px) {
