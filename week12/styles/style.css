@@ -89,6 +89,9 @@ h6 {
   gap: 2rem;
   background-color: var(--light-complimentary-primary);
   font-family: sans-serif;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
 }
 
 .navigation-bar a {

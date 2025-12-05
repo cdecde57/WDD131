@@ -19,7 +19,7 @@ function paintHTML() {
             <td>#${index + 1}</td>
             <td>${entry.entryType}</td>
             <td>${entry.entryName}</td>
-            <td>${entry.entryAmount}</td>
+            <td>\$${entry.entryAmount}</td>
         </tr>
           `;
   });
@@ -103,6 +103,7 @@ function analyzeBudget() {
   });
 
   // Return the profit of the user's budget if any
+  // Found on stack overflow that '(Math.round(var * 100) / 100)' will ensure it's rounded to the second decimal place
   return Math.round(profit * 100) / 100;
 }
 
@@ -113,8 +114,16 @@ function randomNum(max) {
 
 // Give the user feedback based on their budget
 function giveFeedback() {
-  // Found on stack overflow that '(Math.round(var * 100) / 100)' will ensure it's rounded to the second decimal place
   let profit = analyzeBudget();
+
+  console.log(profit);
+
+  // If the user doesn't have enough entries, we'll get a NaN result from analyzeBudget because of the reduce function. Catch and throw a message if that's the case
+  if (isNaN(profit)) {
+    document.querySelector("#widget-feedback").textContent =
+      "Feedback: Please enter more than 1 entry";
+    return;
+  }
 
   // Tip and congratulation messages depending on how the user budgets
   let helpMessages = [
