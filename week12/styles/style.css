@@ -90,8 +90,7 @@ h6 {
   background-color: var(--light-complimentary-primary);
   font-family: sans-serif;
   padding: 1rem;
-  position: sticky;
-  top: 0;
+
 }
 
 .navigation-bar a {
@@ -125,6 +124,8 @@ h6 {
     flex-flow: row wrap;
     justify-content: center;
     gap: 20%;
+    position: sticky;
+    top: 0;
   }
   .header-menu-button {
     display: none;
